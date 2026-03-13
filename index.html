@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fi">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +16,15 @@
 .page{ display:none; }
 .page.active{ display:block; }
 </style>
+
 </head>
 
 <body class="bg-slate-100 text-slate-800 min-h-screen">
 
 <div class="max-w-6xl mx-auto p-6">
 
-
 <nav class="flex justify-between items-center mb-8">
+
 <h1 class="text-xl font-bold">SHB QR Code Generator</h1>
 
 <div class="space-x-4">
@@ -30,41 +32,56 @@
 <button onclick="showPage('guide')" class="text-indigo-600 font-medium">Ohjeet</button>
 <button onclick="showPage('contact')" class="text-indigo-600 font-medium">Yhteystiedot</button>
 </div>
+
 </nav>
-
-
 
 <section id="home" class="page active">
 
 <header class="text-center mb-8">
+
 <h2 class="text-3xl font-bold">QR-koodigeneraattori</h2>
-<p class="text-slate-500 mt-2">
+
+<p class="text-slate-700 mt-2">
 Luo QR-koodi tekstistä tai verkkosivun osoitteesta nopeasti ja helposti.
 </p>
+
 </header>
 
-<main class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
 <section class="card bg-white p-5 rounded-2xl">
 
-<label class="block font-medium mb-2">
+<h3 class="text-lg font-semibold mb-4">
+QR-koodin tiedot
+</h3>
+
+<label for="qr-text" class="block font-medium mb-2">
 Syötä teksti tai URL-osoite
 </label>
 
-<textarea id="qr-text"
+<textarea
+id="qr-text"
 class="w-full border rounded-lg p-3 h-24"
-placeholder="https://example.com"></textarea>
+placeholder="https://example.com"
+></textarea>
 
 <div class="mt-4">
 
-<label class="block text-sm font-medium mb-2">
+<label for="size" class="block text-sm font-medium mb-2">
 QR-koodin koko
 </label>
 
-<input id="size" type="range" min="128" max="1024" step="32" value="320" class="w-full">
+<input
+id="size"
+type="range"
+min="128"
+max="1024"
+step="32"
+value="320"
+class="w-full"
+>
 
-<div class="text-xs text-slate-500">
+<div class="text-xs text-slate-600 mt-1">
 <span id="size-val">320</span> px
 </div>
 
@@ -72,13 +89,15 @@ QR-koodin koko
 
 <div class="flex gap-3 mt-5">
 
-<button id="generate"
+<button
+id="generate"
 class="flex-1 bg-indigo-600 text-white rounded-lg px-4 py-2">
 Luo
 </button>
 
-<button id="download"
-class="flex-1 bg-green-600 text-white rounded-lg px-4 py-2">
+<button
+id="download"
+class="flex-1 bg-green-700 text-white rounded-lg px-4 py-2">
 Lataa
 </button>
 
@@ -86,110 +105,99 @@ Lataa
 
 </section>
 
-
-
 <section class="card bg-white p-5 rounded-2xl flex flex-col items-center">
 
-<div id="qr-container"
+<h3 class="text-lg font-semibold mb-4">
+QR-koodin esikatselu
+</h3>
+
+<div
+id="qr-container"
 class="w-full max-w-[320px] aspect-square border flex items-center justify-center">
 </div>
 
-<p class="text-sm text-slate-500 mt-3">
+<p class="text-sm text-slate-600 mt-3">
 QR-koodin esikatselu
 </p>
 
 </section>
 
-</main>
+</div>
 
 </section>
-
 
 <section id="guide" class="page">
 
 <h2 class="text-3xl font-bold mb-4">Ohjeet</h2>
 
-<p class="text-slate-700 leading-relaxed max-w-2xl">
-
+<p class="max-w-2xl leading-relaxed">
 QR-koodin luominen palvelussa on helppoa.
+Syötä ensin teksti tai linkki ja valitse haluamasi QR-koodin koko.
+</p>
 
-<br><br>
+<p class="mt-3">
+Paina sen jälkeen <strong>Luo</strong>-painiketta. Kun QR-koodi on luotu,
+voit ladata sen PNG-muodossa ja käyttää sitä esimerkiksi:
+</p>
 
-Syötä ensin teksti tai linkki.  
-Valitse haluamasi QR-koodin koko ja paina **Luo-painiketta**.
-
-<br><br>
-
-Kun QR-koodi on luotu, voit ladata sen **PNG-muodossa**
-ja käyttää esimerkiksi:
-
-<ul class="list-disc ml-6 mt-2">
+<ul class="list-disc ml-6 mt-3">
 <li>esitteissä</li>
 <li>julisteissa</li>
 <li>verkkosivuilla</li>
 <li>tapahtumamateriaaleissa</li>
 </ul>
 
-</p>
-
-<button onclick="showPage('home')"
+<button
+onclick="showPage('home')"
 class="mt-6 bg-indigo-600 text-white px-4 py-2 rounded-lg">
 Takaisin etusivulle
 </button>
 
 </section>
-
-
-
 
 <section id="contact" class="page">
 
 <h2 class="text-3xl font-bold mb-4">Yhteystiedot</h2>
 
 <p class="max-w-2xl leading-relaxed">
-
 Jos sinulla on kysyttävää palvelusta tai haluat antaa palautetta,
 voit ottaa yhteyttä sähköpostitse.
+</p>
 
-<br><br>
-
-Tekijän muita projekteja ja osaamista voi tarkastella LinkedIn-profiilin kautta.
-
+<p class="mt-3">
+Tekijän muita projekteja ja osaamista voi tarkastella GitHub- ja
+LinkedIn-profiilien kautta.
 </p>
 
 <div class="mt-4 space-y-2">
 
-<p>📧 Sähköposti: nikita.kazakov.home@gmail.com</p>
-<p>💻 GitHub: github.com/NikitaGit777</p>
-<p>🔗 LinkedIn: linkedin.com/in/nikita-kazakov-a9376524a</p>
+<p>📧 Sähköposti: example@email.com</p>
+<p>💻 GitHub: github.com/example</p>
+<p>🔗 LinkedIn: linkedin.com/in/example</p>
 
 </div>
 
-<button onclick="showPage('home')"
+<button
+onclick="showPage('home')"
 class="mt-6 bg-indigo-600 text-white px-4 py-2 rounded-lg">
 Takaisin etusivulle
 </button>
 
 </section>
 
-
 </div>
-
 
 <script>
 
-
 function showPage(id){
 
-document.querySelectorAll('.page').forEach(p=>{
-p.classList.remove('active')
+document.querySelectorAll('.page').forEach(page=>{
+page.classList.remove('active')
 })
 
 document.getElementById(id).classList.add('active')
 
 }
-
-
 
 const text = document.getElementById("qr-text")
 const size = document.getElementById("size")
@@ -216,16 +224,17 @@ height:parseInt(size.value)
 
 document.getElementById("generate").onclick=generateQR
 
-
-
 document.getElementById("download").onclick=()=>{
 
 const img=container.querySelector("img")
+
 if(!img) return
 
 const a=document.createElement("a")
+
 a.href=img.src
 a.download="qr.png"
+
 a.click()
 
 }
@@ -234,4 +243,3 @@ a.click()
 
 </body>
 </html>
-
