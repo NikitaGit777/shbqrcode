@@ -21,9 +21,9 @@
 
 <body class="bg-slate-100 text-slate-800 min-h-screen">
 
-<div class="max-w-6xl mx-auto p-6">
+<header class="max-w-6xl mx-auto p-6">
 
-<nav class="flex justify-between items-center mb-8">
+<nav class="flex justify-between items-center">
 
 <h1 class="text-xl font-bold">SHB QR Code Generator</h1>
 
@@ -34,6 +34,11 @@
 </div>
 
 </nav>
+
+</header>
+
+
+<main class="max-w-6xl mx-auto px-6 pb-10">
 
 <section id="home" class="page active">
 
@@ -126,6 +131,7 @@ QR-koodin esikatselu
 
 </section>
 
+
 <section id="guide" class="page">
 
 <h2 class="text-3xl font-bold mb-4">Ohjeet</h2>
@@ -154,6 +160,7 @@ Takaisin etusivulle
 </button>
 
 </section>
+
 
 <section id="contact" class="page">
 
@@ -185,18 +192,15 @@ Takaisin etusivulle
 
 </section>
 
-</div>
+</main>
 
 <script>
 
 function showPage(id){
-
 document.querySelectorAll('.page').forEach(page=>{
 page.classList.remove('active')
 })
-
 document.getElementById(id).classList.add('active')
-
 }
 
 const text = document.getElementById("qr-text")
